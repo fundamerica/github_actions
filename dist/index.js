@@ -28,7 +28,7 @@ if (action === 'opened') {
 } else if (action === 'review_requested') {
     //Once reviewers have been requested, the cr is ready for review.
     //Initial cr label should be removed
-    await octokit.issues.addLabels({
+    octokit.issues.addLabels({
         owner,
         repo,
         issue_number: pull_request.number,
@@ -38,7 +38,7 @@ if (action === 'opened') {
         owner,
         repo,
         issue_number: pull_request.number,
-        labels: ['cr: none']
+        label: 'cr: none'
     });
 } else if (action === 'labeled' && payload.label != null) {
     //If a label is added, all conflicting same-color labels should be removed
@@ -51,14 +51,14 @@ if (action === 'opened') {
                     owner,
                     repo,
                     issue_number: pull_request.number,
-                    labels: [current_label.name]
+                    label: current_label.name
                 });
             }
         }
     }
 } else if (action === 'submitted' && payload.review != null) {
     //A review has been submitted; check the number of approved reviews and update accordingly
-    const reviews = await octokit.pulls.listReviews({
+    const reviews = octokit.pulls.listReviews({
         owner,
         repo,
         issue_number: pull_request.number
