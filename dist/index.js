@@ -46,7 +46,7 @@ if (action === 'opened') {
     const label = payload.label;
     if (!label.name.startsWith("*")) {
         for (let current_label in pull_request.labels) {
-            if (label.color == current_label.color) {
+            if (label.color === current_label.color) {
                 octokit.issues.removeLabel({
                     owner,
                     repo,
@@ -74,6 +74,7 @@ if (action === 'opened') {
             issue_number: pull_request.number,
             labels:['cr: completed']
         });
+
         // Leaving out removal to see if octokit triggers "labeled" action
     }
 }
