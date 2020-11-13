@@ -14,7 +14,7 @@ jobs:
   label_manager:
     runs-on: ubuntu-latest
     steps:
-      - uses: fundamerica/github_actions@v1.0.0
+      - uses: fundamerica/github_actions@main
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           approval-count: 2
