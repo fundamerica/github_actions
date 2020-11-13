@@ -1,9 +1,17 @@
 name: "Manage labels for pull requests"
 
-on: [pull_request, pull_request_review]
+on:
+  pull_request:
+    types:
+      - labeled
+      - opened
+      - review_requested
+  pull_request_review:
+    types:
+      - submitted
 
 jobs:
-  pr_update_text:
+  label_manager:
     runs-on: ubuntu-latest
     steps:
       - uses: fundamerica/github_actions@v1.0.0
