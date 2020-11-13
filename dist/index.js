@@ -48,9 +48,10 @@ if (action === 'opened') {
     core.info("--------------");
     core.info(JSON.stringify(pull_request.labels));
     if (!label.name.startsWith("*")) {
-        for (let current_label in pull_request.labels) {
+        for (let current_label_index in pull_request.labels) {
+            const current_label = pull_request.labels[current_label_index];
             core.info("Comparing...");
-            core.info(JSON.stringify(current_label));
+            core.info(JSON.stringify(pull_request.labels[current_label]));
             if (label.color === current_label.color) {
                 core.info("Match");
                 octokit.issues.removeLabel({
