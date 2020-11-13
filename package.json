@@ -1,0 +1,19 @@
+{
+  "name": "github_actions",
+  "version": "1.0.0",
+  "description": "Public repository for actions to be used as needed across PrimeTrust's private repositories.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fundamerica/github_actions.git"
+  },
+  "author": "PrimeTrust",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fundamerica/github_actions/issues"
+  },
+  "homepage": "https://github.com/fundamerica/github_actions#readme"
+}
