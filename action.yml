@@ -1,0 +1,12 @@
+name: 'PrimeTrust GitHub Actions'
+description: 'Processors for PrimeTrust GitHub repository actions'
+inputs:
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+  approval-count:
+    description: 'Number of approvals needed to move forward'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

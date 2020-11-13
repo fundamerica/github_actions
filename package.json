@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/fundamerica/github_actions/issues"
   },
-  "homepage": "https://github.com/fundamerica/github_actions#readme"
+  "homepage": "https://github.com/fundamerica/github_actions#readme",
+  "keywords": [],
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "@octokit/rest": "^18.0.9"
+  },
+  "devDependencies": {}
 }

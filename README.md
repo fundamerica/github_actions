@@ -1,2 +1,2 @@
 # github_actions
-Public repository for actions to be used as needed across PrimeTrust's private repositories.
+Requires https://github.com/fundamerica/labels_setup to be set up on repository.
