@@ -1,3 +1,5 @@
+import {GitHub} from "@actions/github/lib/utils";
+
 const core = require('@actions/core');
 const github = require('@actions/github');
 
@@ -6,7 +8,7 @@ const inputs = {
     approval_count: core.getInput('approval-count', {required: true})
 }
 
-const octokit = new github.GitHub(inputs.token);
+const octokit = new GitHub(inputs.token);
 
 const owner = github.context.repo.owner;
 const repo = github.context.repo.repo;
