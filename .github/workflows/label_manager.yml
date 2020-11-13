@@ -1,0 +1,12 @@
+name: "Manage labels for pull requests"
+
+on: [pull_request, pull_request_review]
+
+jobs:
+  pr_update_text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github_actions@v1.0.0
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          approval-count: 2
