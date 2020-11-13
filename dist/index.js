@@ -45,10 +45,12 @@ if (action === 'opened') {
     //Label groups that begin with '*' will be ignored
     const label = payload.label;
     core.info(JSON.stringify(label));
+    core.info("--------------");
+    core.info(JSON.stringify(pull_request.labels));
     if (!label.name.startsWith("*")) {
         for (let current_label in pull_request.labels) {
             core.info("Comparing...");
-            core.info(JSON.stringify(label));
+            core.info(JSON.stringify(current_label));
             if (label.color === current_label.color) {
                 core.info("Match");
                 octokit.issues.removeLabel({
