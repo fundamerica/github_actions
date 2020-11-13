@@ -44,9 +44,13 @@ if (action === 'opened') {
     //If a label is added, all conflicting same-color labels should be removed
     //Label groups that begin with '*' will be ignored
     const label = payload.label;
+    core.info(JSON.stringify(label));
     if (!label.name.startsWith("*")) {
         for (let current_label in pull_request.labels) {
+            core.info("Comparing...");
+            core.info(JSON.stringify(label));
             if (label.color === current_label.color) {
+                core.info("Match");
                 octokit.issues.removeLabel({
                     owner,
                     repo,
