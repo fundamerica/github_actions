@@ -28,7 +28,7 @@ if (action === 'opened') {
 } else if (action === 'review_requested') {
     //Once reviewers have been requested, the cr is ready for review.
     //Initial cr label should be removed
-    octokit.issues.addLabels({
+    await octokit.issues.addLabels({
         owner,
         repo,
         issue_number: pull_request.number,
@@ -58,7 +58,7 @@ if (action === 'opened') {
     }
 } else if (action === 'submitted' && payload.review != null) {
     //A review has been submitted; check the number of approved reviews and update accordingly
-    const reviews = octokit.pulls.listReviews({
+    const reviews = await octokit.pulls.listReviews({
         owner,
         repo,
         issue_number: pull_request.number
