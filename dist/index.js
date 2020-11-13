@@ -38,7 +38,7 @@ if (action === 'opened') {
         owner,
         repo,
         issue_number: pull_request.number,
-        label: 'cr: none'
+        name: 'cr: none'
     });
 } else if (action === 'labeled' && payload.label != null) {
     //If a label is added, all conflicting same-color labels should be removed
@@ -51,7 +51,7 @@ if (action === 'opened') {
                     owner,
                     repo,
                     issue_number: pull_request.number,
-                    label: current_label.name
+                    name: current_label.name
                 });
             }
         }
