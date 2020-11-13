@@ -6,7 +6,7 @@ jobs:
   pr_update_text:
     runs-on: ubuntu-latest
     steps:
-      - uses: github_actions@v1.0.0
+      - uses: fundamerica/github_actions@v1.0.0
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           approval-count: 2
